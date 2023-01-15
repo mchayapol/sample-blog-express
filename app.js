@@ -1,18 +1,18 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+let createError = require('http-errors');
+let express = require('express');
+let path = require('path');
+let cookieParser = require('cookie-parser');
+let logger = require('morgan');
 require('dotenv').config()
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var blogsRouter = require('./routes/api/blogs');
+let indexRouter = require('./routes/index');
+let usersRouter = require('./routes/users');
+let blogsRouter = require('./routes/api/blogs');
 
 const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI);
 
-var app = express();
+let app = express();
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Sample Blog using Express.js App listening on port ${port}!`));
